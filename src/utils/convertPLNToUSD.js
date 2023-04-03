@@ -11,5 +11,9 @@ export const convertPLNToUSD = (PLN) => {
     return NaN;
   };
 
+  if (typeof PLN !== 'string' && typeof PLN !== 'number') {
+    return 'Error';
+  }
+
   return formatter.format(PLNtoUSD).replace(/\u00a0/g, ' ');
 }
